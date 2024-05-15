@@ -4,6 +4,7 @@ import cv2
 import sys
 from PyQt5 import QtWidgets
 from PyQt5 import QtCore
+from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from video_app import  Ui_MainWindow
@@ -20,16 +21,14 @@ class video(QtWidgets.QMainWindow, Ui_MainWindow):
 
         self.time = QTimer()
         self.time.timeout.connect(self.framing)
-        self.time.start(10)
+        self.time.start(50)
 
         self.time2predict = QTimer()
         self.time2predict.timeout.connect(self.predicting)
-        self.time2predict.start(2000)
+        self.time2predict.start(2500)
 
         self.face = []
-
-
-        
+  
     def framing(self):
         ret,frame = self.cam.read()
         if ret:
@@ -75,13 +74,57 @@ class video(QtWidgets.QMainWindow, Ui_MainWindow):
             else:
                 status = "NEUTRAL"
 
-            self.progressBar_Angry.setValue(int(Prediction[0][0] * 100))
-            self.progressBar_Disgust.setValue(int(Prediction[0][1] * 100))
-            self.progressBar_Fear.setValue(int(Prediction[0][2] * 100))
-            self.progressBar_Happy.setValue(int(Prediction[0][3] * 100))
-            self.progressBar_Neutral.setValue(int(Prediction[0][6] * 100))
-            self.progressBar_Sad.setValue(int(Prediction[0][4] * 100))
-            self.progressBar_Surprise.setValue(int(Prediction[0][5] * 100))
+
+            self.animation = QPropertyAnimation(self.progressBar_Angry, b"value")
+            self.animation.setDuration(1500)
+            self.animation.setStartValue(0)
+            self.animation.setEndValue(int(Prediction[0][0] * 100))
+            self.animation.setEasingCurve(QEasingCurve.OutCubic)
+
+            self.animation1 = QPropertyAnimation(self.progressBar_Disgust, b"value")
+            self.animation1.setDuration(1500)
+            self.animation1.setStartValue(0)
+            self.animation1.setEndValue(int(Prediction[0][1] * 100))
+            self.animation1.setEasingCurve(QEasingCurve.OutCubic)
+
+            self.animation2 = QPropertyAnimation(self.progressBar_Fear, b"value")
+            self.animation2.setDuration(1500)
+            self.animation2.setStartValue(0)
+            self.animation2.setEndValue(int(Prediction[0][2] * 100))
+            self.animation2.setEasingCurve(QEasingCurve.OutCubic)
+
+            self.animation3 = QPropertyAnimation(self.progressBar_Happy, b"value")
+            self.animation3.setDuration(1500)
+            self.animation3.setStartValue(0)
+            self.animation3.setEndValue(int(Prediction[0][3] * 100))
+            self.animation3.setEasingCurve(QEasingCurve.OutCubic)
+
+            self.animation4 = QPropertyAnimation(self.progressBar_Sad, b"value")
+            self.animation4.setDuration(1500)
+            self.animation4.setStartValue(0)
+            self.animation4.setEndValue(int(Prediction[0][4] * 100))
+            self.animation4.setEasingCurve(QEasingCurve.OutCubic)
+
+            self.animation5 = QPropertyAnimation(self.progressBar_Surprise, b"value")
+            self.animation5.setDuration(1500)
+            self.animation5.setStartValue(0)
+            self.animation5.setEndValue(int(Prediction[0][5] * 100))
+            self.animation5.setEasingCurve(QEasingCurve.OutCubic)
+
+            self.animation6 = QPropertyAnimation(self.progressBar_Neutral, b"value")
+            self.animation6.setDuration(1500)
+            self.animation6.setStartValue(0)
+            self.animation6.setEndValue(int(Prediction[0][6] * 100))
+            self.animation6.setEasingCurve(QEasingCurve.OutCubic)
+
+            self.animation.start()
+            self.animation1.start()
+            self.animation2.start()
+            self.animation3.start()
+            self.animation4.start()
+            self.animation5.start()
+            self.animation6.start()
+
             self.statusText.setPlainText(status)
 
     def liveCamShow(self, frame):
@@ -90,6 +133,13 @@ class video(QtWidgets.QMainWindow, Ui_MainWindow):
         self.scene.clear()
         self.scene.addPixmap(pixmap)
         self.liveCam.fitInView(self.scene.sceneRect(), QtCore.Qt.KeepAspectRatio)
+
+    def progressBarAnimation(self, progressBar, Prediction):
+        self.animation = QPropertyAnimation(progressBar, b"value")
+        self.animation.setDuration(2000)
+        self.animation.setStartValue(0)
+        self.animation.setEndValue(int(Prediction * 100))
+        self.animation.start()  
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
