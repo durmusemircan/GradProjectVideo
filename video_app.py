@@ -24,23 +24,52 @@ class Ui_MainWindow(object):
         MainWindow.setMouseTracking(True)
         MainWindow.setToolTipDuration(-2)
         MainWindow.setAutoFillBackground(False)
-        MainWindow.setStyleSheet("background-color: #EEEEEE;")
+        MainWindow.setStyleSheet("QPushButton {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"")
         MainWindow.setIconSize(QtCore.QSize(24, 24))
         MainWindow.setAnimated(True)
         MainWindow.setTabShape(QtWidgets.QTabWidget.Rounded)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setStyleSheet("QWidget {\n"
+"    background: #FFFFFF;\n"
+"}\n"
+"")
         self.centralwidget.setObjectName("centralwidget")
         self.liveCam = QtWidgets.QGraphicsView(self.centralwidget)
-        self.liveCam.setGeometry(QtCore.QRect(880, 100, 960, 540))
+        self.liveCam.setGeometry(QtCore.QRect(880, 220, 960, 540))
         self.liveCam.setMaximumSize(QtCore.QSize(960, 540))
-        self.liveCam.setStyleSheet(" background-color: #EEEEEE;\n"
-"border: none;")
+        self.liveCam.setStyleSheet(" background-color: #FFFFFF;\n"
+"border: none;\n"
+"border-radius: 40px;\n"
+"")
         self.liveCam.setObjectName("liveCam")
         self.progressBar_Angry = QtWidgets.QProgressBar(self.centralwidget)
-        self.progressBar_Angry.setGeometry(QtCore.QRect(30, 130, 821, 111))
+        self.progressBar_Angry.setGeometry(QtCore.QRect(30, 220, 821, 80))
         self.progressBar_Angry.setFocusPolicy(QtCore.Qt.ClickFocus)
         self.progressBar_Angry.setAutoFillBackground(False)
-        self.progressBar_Angry.setStyleSheet(" border: none;")
+        self.progressBar_Angry.setStyleSheet("QProgressBar {\n"
+"    border-radius: 40px;\n"
+"    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                stop: 0 #EFEFEF, stop: 1 #D9D9D9);\n"
+"    border: 1px solid transparent;\n"
+"}\n"
+"\n"
+"QProgressBar::chunk {\n"
+"    background-color: #426B1F;\n"
+"    border-radius: 38px;\n"
+"    margin: 1px;\n"
+"    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                stop: 0 #497C23, stop: 1 #426B1F);\n"
+"}\n"
+"\n"
+"\n"
+"")
         self.progressBar_Angry.setProperty("value", 12)
         self.progressBar_Angry.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.progressBar_Angry.setTextVisible(False)
@@ -49,9 +78,25 @@ class Ui_MainWindow(object):
         self.progressBar_Angry.setTextDirection(QtWidgets.QProgressBar.TopToBottom)
         self.progressBar_Angry.setObjectName("progressBar_Angry")
         self.progressBar_Disgust = QtWidgets.QProgressBar(self.centralwidget)
-        self.progressBar_Disgust.setGeometry(QtCore.QRect(30, 250, 821, 111))
+        self.progressBar_Disgust.setGeometry(QtCore.QRect(30, 310, 821, 80))
         self.progressBar_Disgust.setFocusPolicy(QtCore.Qt.NoFocus)
-        self.progressBar_Disgust.setStyleSheet("border: none;")
+        self.progressBar_Disgust.setStyleSheet("QProgressBar {\n"
+"    border-radius: 40px;\n"
+"    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                stop: 0 #EFEFEF, stop: 1 #D9D9D9);\n"
+"    border: 1px solid transparent;\n"
+"}\n"
+"\n"
+"QProgressBar::chunk {\n"
+"    background-color: #426B1F;\n"
+"    border-radius: 38px;\n"
+"    margin: 1px;\n"
+"    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                stop: 0 #497C23, stop: 1 #426B1F);\n"
+"}\n"
+"\n"
+"\n"
+"")
         self.progressBar_Disgust.setProperty("value", 18)
         self.progressBar_Disgust.setTextVisible(False)
         self.progressBar_Disgust.setOrientation(QtCore.Qt.Horizontal)
@@ -59,147 +104,328 @@ class Ui_MainWindow(object):
         self.progressBar_Disgust.setTextDirection(QtWidgets.QProgressBar.BottomToTop)
         self.progressBar_Disgust.setObjectName("progressBar_Disgust")
         self.progressBar_Happy = QtWidgets.QProgressBar(self.centralwidget)
-        self.progressBar_Happy.setGeometry(QtCore.QRect(30, 490, 821, 111))
-        self.progressBar_Happy.setStyleSheet("border: none;")
-        self.progressBar_Happy.setProperty("value", 3)
+        self.progressBar_Happy.setGeometry(QtCore.QRect(30, 490, 821, 80))
+        self.progressBar_Happy.setStyleSheet("QProgressBar {\n"
+"    border-radius: 40px;\n"
+"    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                stop: 0 #EFEFEF, stop: 1 #D9D9D9);\n"
+"    border: 1px solid transparent;\n"
+"}\n"
+"\n"
+"QProgressBar::chunk {\n"
+"    background-color: #426B1F;\n"
+"    border-radius: 38px;\n"
+"    margin: 1px;\n"
+"    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                stop: 0 #497C23, stop: 1 #426B1F);\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"")
+        self.progressBar_Happy.setProperty("value", 10)
         self.progressBar_Happy.setTextVisible(False)
         self.progressBar_Happy.setObjectName("progressBar_Happy")
         self.progressBar_Fear = QtWidgets.QProgressBar(self.centralwidget)
-        self.progressBar_Fear.setGeometry(QtCore.QRect(30, 370, 821, 111))
-        self.progressBar_Fear.setStyleSheet("border: none;")
+        self.progressBar_Fear.setEnabled(True)
+        self.progressBar_Fear.setGeometry(QtCore.QRect(30, 400, 821, 80))
+        self.progressBar_Fear.setAutoFillBackground(False)
+        self.progressBar_Fear.setStyleSheet("QProgressBar {\n"
+"    border-radius: 40px;\n"
+"    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                stop: 0 #EFEFEF, stop: 1 #D9D9D9);\n"
+"    border: 1px solid transparent;\n"
+"}\n"
+"\n"
+"QProgressBar::chunk {\n"
+"    background-color: #426B1F;\n"
+"    border-radius: 38px;\n"
+"    margin: 1px;\n"
+"    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                stop: 0 #497C23, stop: 1 #426B1F);\n"
+"}\n"
+"\n"
+"\n"
+"")
         self.progressBar_Fear.setProperty("value", 55)
         self.progressBar_Fear.setTextVisible(False)
         self.progressBar_Fear.setObjectName("progressBar_Fear")
         self.progressBar_Sad = QtWidgets.QProgressBar(self.centralwidget)
-        self.progressBar_Sad.setGeometry(QtCore.QRect(30, 610, 821, 111))
-        self.progressBar_Sad.setStyleSheet("border: none;")
-        self.progressBar_Sad.setProperty("value", 4)
+        self.progressBar_Sad.setGeometry(QtCore.QRect(30, 580, 821, 80))
+        self.progressBar_Sad.setStyleSheet("QProgressBar {\n"
+"    border-radius: 40px;\n"
+"    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                stop: 0 #EFEFEF, stop: 1 #D9D9D9);\n"
+"    border: 1px solid transparent;\n"
+"}\n"
+"\n"
+"QProgressBar::chunk {\n"
+"    background-color: #426B1F;\n"
+"    border-radius: 38px;\n"
+"    margin: 1px;\n"
+"    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                stop: 0 #497C23, stop: 1 #426B1F);\n"
+"}\n"
+"\n"
+"\n"
+"")
+        self.progressBar_Sad.setProperty("value", 0)
         self.progressBar_Sad.setTextVisible(False)
         self.progressBar_Sad.setObjectName("progressBar_Sad")
         self.progressBar_Surprise = QtWidgets.QProgressBar(self.centralwidget)
-        self.progressBar_Surprise.setGeometry(QtCore.QRect(30, 730, 821, 111))
-        self.progressBar_Surprise.setStyleSheet("border: none;")
-        self.progressBar_Surprise.setProperty("value", 1)
+        self.progressBar_Surprise.setGeometry(QtCore.QRect(30, 670, 821, 80))
+        self.progressBar_Surprise.setStyleSheet("QProgressBar {\n"
+"    border-radius: 40px;\n"
+"    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                stop: 0 #EFEFEF, stop: 1 #D9D9D9);\n"
+"    border: 1px solid transparent;\n"
+"}\n"
+"\n"
+"QProgressBar::chunk {\n"
+"    background-color: #426B1F;\n"
+"    border-radius: 38px;\n"
+"    margin: 1px;\n"
+"    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                stop: 0 #497C23, stop: 1 #426B1F);\n"
+"}\n"
+"\n"
+"\n"
+"")
+        self.progressBar_Surprise.setProperty("value", 11)
         self.progressBar_Surprise.setTextVisible(False)
         self.progressBar_Surprise.setObjectName("progressBar_Surprise")
         self.progressBar_Neutral = QtWidgets.QProgressBar(self.centralwidget)
-        self.progressBar_Neutral.setGeometry(QtCore.QRect(30, 850, 821, 111))
-        self.progressBar_Neutral.setStyleSheet("border: none;")
-        self.progressBar_Neutral.setProperty("value", 7)
+        self.progressBar_Neutral.setGeometry(QtCore.QRect(30, 760, 821, 80))
+        self.progressBar_Neutral.setStyleSheet("QProgressBar {\n"
+"    border-radius: 40px;\n"
+"    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                stop: 0 #EFEFEF, stop: 1 #D9D9D9);\n"
+"    border: 1px solid transparent;\n"
+"}\n"
+"\n"
+"QProgressBar::chunk {\n"
+"    background-color: #426B1F;\n"
+"    border-radius: 38px;\n"
+"    margin: 1px;\n"
+"    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                stop: 0 #497C23, stop: 1 #426B1F);\n"
+"}\n"
+"\n"
+"")
+        self.progressBar_Neutral.setProperty("value", 11)
         self.progressBar_Neutral.setTextVisible(False)
         self.progressBar_Neutral.setObjectName("progressBar_Neutral")
+        self.textBrowser = QtWidgets.QTextBrowser(self.centralwidget)
+        self.textBrowser.setGeometry(QtCore.QRect(180, 150, 501, 61))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.textBrowser.sizePolicy().hasHeightForWidth())
+        self.textBrowser.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Newsreader")
+        font.setBold(False)
+        font.setWeight(50)
+        self.textBrowser.setFont(font)
+        self.textBrowser.setStyleSheet("background: transparent;\n"
+"border: none;\n"
+"color: #426B1F;\n"
+"")
+        self.textBrowser.setObjectName("textBrowser")
         self.statusText = QtWidgets.QTextBrowser(self.centralwidget)
-        self.statusText.setEnabled(True)
-        self.statusText.setGeometry(QtCore.QRect(890, 730, 941, 191))
+        self.statusText.setGeometry(QtCore.QRect(870, 770, 501, 261))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.statusText.sizePolicy().hasHeightForWidth())
         self.statusText.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
-        font.setFamily("Agency FB")
-        font.setPointSize(80)
-        font.setBold(True)
-        font.setWeight(75)
-        font.setStyleStrategy(QtGui.QFont.NoAntialias)
+        font.setFamily("Newsreader")
+        font.setPointSize(72)
+        font.setBold(False)
+        font.setWeight(50)
+        font.setStrikeOut(False)
+        font.setKerning(True)
+        font.setStyleStrategy(QtGui.QFont.PreferDefault)
         self.statusText.setFont(font)
-        self.statusText.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.statusText.setAutoFillBackground(True)
         self.statusText.setStyleSheet("background: transparent;\n"
-"text-align: center;\n"
-"vertical-align: middle;\n"
-"border: none;")
-        self.statusText.setOverwriteMode(False)
+"border: none;\n"
+"color: #426B1F;\n"
+"")
         self.statusText.setObjectName("statusText")
-        self.textBrowser = QtWidgets.QTextBrowser(self.centralwidget)
-        self.textBrowser.setGeometry(QtCore.QRect(180, 20, 501, 91))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.textBrowser.sizePolicy().hasHeightForWidth())
-        self.textBrowser.setSizePolicy(sizePolicy)
-        self.textBrowser.setStyleSheet("background: transparent;\n"
-"border: none;")
-        self.textBrowser.setObjectName("textBrowser")
         self.textBrowser_2 = QtWidgets.QTextBrowser(self.centralwidget)
-        self.textBrowser_2.setEnabled(True)
-        self.textBrowser_2.setGeometry(QtCore.QRect(30, 150, 311, 71))
+        self.textBrowser_2.setGeometry(QtCore.QRect(50, 40, 501, 61))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.textBrowser_2.sizePolicy().hasHeightForWidth())
         self.textBrowser_2.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
-        font.setFamily("Agency FB")
-        font.setPointSize(16)
-        font.setBold(True)
-        font.setWeight(75)
-        font.setKerning(True)
+        font.setFamily("Newsreader")
+        font.setBold(False)
+        font.setWeight(50)
         self.textBrowser_2.setFont(font)
         self.textBrowser_2.setStyleSheet("background: transparent;\n"
-"border: none;")
+"border: none;\n"
+"color: #426B1F;\n"
+"")
         self.textBrowser_2.setObjectName("textBrowser_2")
-        self.textBrowser_3 = QtWidgets.QTextBrowser(self.centralwidget)
-        self.textBrowser_3.setGeometry(QtCore.QRect(30, 270, 311, 71))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.textBrowser_3.sizePolicy().hasHeightForWidth())
-        self.textBrowser_3.setSizePolicy(sizePolicy)
-        self.textBrowser_3.setStyleSheet("background: transparent;\n"
-"border: none;")
-        self.textBrowser_3.setObjectName("textBrowser_3")
-        self.textBrowser_4 = QtWidgets.QTextBrowser(self.centralwidget)
-        self.textBrowser_4.setEnabled(True)
-        self.textBrowser_4.setGeometry(QtCore.QRect(30, 390, 311, 71))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.textBrowser_4.sizePolicy().hasHeightForWidth())
-        self.textBrowser_4.setSizePolicy(sizePolicy)
-        self.textBrowser_4.setStyleSheet("background: transparent;\n"
-"border: none;")
-        self.textBrowser_4.setObjectName("textBrowser_4")
         self.textBrowser_5 = QtWidgets.QTextBrowser(self.centralwidget)
-        self.textBrowser_5.setGeometry(QtCore.QRect(30, 510, 311, 71))
+        self.textBrowser_5.setGeometry(QtCore.QRect(35, 245, 91, 31))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.textBrowser_5.sizePolicy().hasHeightForWidth())
         self.textBrowser_5.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Newsreader")
+        font.setBold(False)
+        font.setWeight(50)
+        self.textBrowser_5.setFont(font)
         self.textBrowser_5.setStyleSheet("background: transparent;\n"
-"border: none;")
+"border: none;\n"
+"color: #FFFFFF;\n"
+"")
         self.textBrowser_5.setObjectName("textBrowser_5")
         self.textBrowser_6 = QtWidgets.QTextBrowser(self.centralwidget)
-        self.textBrowser_6.setGeometry(QtCore.QRect(30, 630, 311, 71))
+        self.textBrowser_6.setGeometry(QtCore.QRect(35, 335, 91, 31))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.textBrowser_6.sizePolicy().hasHeightForWidth())
         self.textBrowser_6.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Newsreader")
+        font.setBold(False)
+        font.setWeight(50)
+        self.textBrowser_6.setFont(font)
         self.textBrowser_6.setStyleSheet("background: transparent;\n"
-"border: none;")
+"border: none;\n"
+"color: #FFFFFF;\n"
+"")
         self.textBrowser_6.setObjectName("textBrowser_6")
         self.textBrowser_7 = QtWidgets.QTextBrowser(self.centralwidget)
-        self.textBrowser_7.setGeometry(QtCore.QRect(30, 750, 311, 71))
+        self.textBrowser_7.setGeometry(QtCore.QRect(35, 425, 91, 31))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.textBrowser_7.sizePolicy().hasHeightForWidth())
         self.textBrowser_7.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Newsreader")
+        font.setBold(False)
+        font.setWeight(50)
+        self.textBrowser_7.setFont(font)
         self.textBrowser_7.setStyleSheet("background: transparent;\n"
-"border: none;")
+"border: none;\n"
+"color: #FFFFFF;\n"
+"")
         self.textBrowser_7.setObjectName("textBrowser_7")
         self.textBrowser_8 = QtWidgets.QTextBrowser(self.centralwidget)
-        self.textBrowser_8.setGeometry(QtCore.QRect(30, 870, 311, 71))
+        self.textBrowser_8.setGeometry(QtCore.QRect(35, 515, 91, 31))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.textBrowser_8.sizePolicy().hasHeightForWidth())
         self.textBrowser_8.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Newsreader")
+        font.setBold(False)
+        font.setWeight(50)
+        self.textBrowser_8.setFont(font)
         self.textBrowser_8.setStyleSheet("background: transparent;\n"
-"border: none;")
+"border: none;\n"
+"color: #FFFFFF;\n"
+"")
         self.textBrowser_8.setObjectName("textBrowser_8")
+        self.textBrowser_9 = QtWidgets.QTextBrowser(self.centralwidget)
+        self.textBrowser_9.setGeometry(QtCore.QRect(35, 605, 91, 31))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.textBrowser_9.sizePolicy().hasHeightForWidth())
+        self.textBrowser_9.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Newsreader")
+        font.setBold(False)
+        font.setWeight(50)
+        self.textBrowser_9.setFont(font)
+        self.textBrowser_9.setStyleSheet("background: transparent;\n"
+"border: none;\n"
+"color: #FFFFFF;\n"
+"")
+        self.textBrowser_9.setObjectName("textBrowser_9")
+        self.textBrowser_10 = QtWidgets.QTextBrowser(self.centralwidget)
+        self.textBrowser_10.setGeometry(QtCore.QRect(35, 695, 91, 31))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.textBrowser_10.sizePolicy().hasHeightForWidth())
+        self.textBrowser_10.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Newsreader")
+        font.setBold(False)
+        font.setWeight(50)
+        self.textBrowser_10.setFont(font)
+        self.textBrowser_10.setStyleSheet("background: transparent;\n"
+"border: none;\n"
+"color: #FFFFFF;\n"
+"")
+        self.textBrowser_10.setObjectName("textBrowser_10")
+        self.textBrowser_11 = QtWidgets.QTextBrowser(self.centralwidget)
+        self.textBrowser_11.setGeometry(QtCore.QRect(35, 785, 91, 31))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.textBrowser_11.sizePolicy().hasHeightForWidth())
+        self.textBrowser_11.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Newsreader")
+        font.setBold(False)
+        font.setWeight(50)
+        self.textBrowser_11.setFont(font)
+        self.textBrowser_11.setStyleSheet("background: transparent;\n"
+"border: none;\n"
+"color: #FFFFFF;\n"
+"")
+        self.textBrowser_11.setObjectName("textBrowser_11")
+        self.emotionDetectorButton = QtWidgets.QPushButton(self.centralwidget)
+        self.emotionDetectorButton.setGeometry(QtCore.QRect(1350, 40, 141, 51))
+        font = QtGui.QFont()
+        font.setFamily("Newsreader")
+        font.setPointSize(13)
+        self.emotionDetectorButton.setFont(font)
+        self.emotionDetectorButton.setStyleSheet("QPushButton {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}")
+        self.emotionDetectorButton.setObjectName("emotionDetectorButton")
+        self.whoWeAreButton = QtWidgets.QPushButton(self.centralwidget)
+        self.whoWeAreButton.setGeometry(QtCore.QRect(1530, 40, 101, 51))
+        font = QtGui.QFont()
+        font.setFamily("Newsreader")
+        font.setPointSize(13)
+        self.whoWeAreButton.setFont(font)
+        self.whoWeAreButton.setStyleSheet("QPushButton {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"")
+        self.whoWeAreButton.setObjectName("whoWeAreButton")
+        self.backButton = QtWidgets.QPushButton(self.centralwidget)
+        self.backButton.setGeometry(QtCore.QRect(1710, 40, 131, 61))
+        font = QtGui.QFont()
+        font.setFamily("Newsreader")
+        font.setPointSize(15)
+        self.backButton.setFont(font)
+        self.backButton.setStyleSheet("QPushButton {\n"
+"    background-color: #426B1F;\n"
+"    color: white;\n"
+"    border-radius: 30px;\n"
+"    padding: 5px 20px;\n"
+"}")
+        self.backButton.setObjectName("backButton")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1920, 21))
@@ -216,48 +442,56 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Live Emotion Detection"))
         self.progressBar_Disgust.setFormat(_translate("MainWindow", "%p%"))
-        self.statusText.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Agency FB\'; font-size:80pt; font-weight:600; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:72pt;\">NEUTRAL</span></p></body></html>"))
         self.textBrowser.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Agency FB\'; font-size:48pt; font-weight:600;\">EMOTION RATES</span></p></body></html>"))
+"</style></head><body style=\" font-family:\'Newsreader\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:24pt;\">Emotion Rates</span></p></body></html>"))
+        self.statusText.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'Newsreader\'; font-size:72pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">NEUTRAL</p></body></html>"))
         self.textBrowser_2.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Agency FB\'; font-size:16pt; font-weight:600; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:36pt;\">ANGRY</span></p></body></html>"))
-        self.textBrowser_3.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Agency FB\'; font-size:36pt; font-weight:600;\">DISGUST</span></p></body></html>"))
-        self.textBrowser_4.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Agency FB\'; font-size:36pt; font-weight:600;\">FEAR</span></p></body></html>"))
+"</style></head><body style=\" font-family:\'Newsreader\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:28pt;\">Video Detector</span></p></body></html>"))
         self.textBrowser_5.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Agency FB\'; font-size:36pt; font-weight:600;\">HAPPY</span></p></body></html>"))
+"</style></head><body style=\" font-family:\'Newsreader\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Inter\'; font-size:11pt;\">ANGRY</span></p></body></html>"))
         self.textBrowser_6.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Agency FB\'; font-size:36pt; font-weight:600;\">SAD</span></p></body></html>"))
+"</style></head><body style=\" font-family:\'Newsreader\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Inter\'; font-size:11pt;\">DISGUST</span></p></body></html>"))
         self.textBrowser_7.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Agency FB\'; font-size:36pt; font-weight:600;\">SURPRISE</span></p></body></html>"))
+"</style></head><body style=\" font-family:\'Newsreader\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Inter\'; font-size:11pt;\">FEAR</span></p></body></html>"))
         self.textBrowser_8.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Agency FB\'; font-size:36pt; font-weight:600;\">NEUTRAL</span></p></body></html>"))
+"</style></head><body style=\" font-family:\'Newsreader\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Inter\'; font-size:11pt;\">HAPPY</span></p></body></html>"))
+        self.textBrowser_9.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'Newsreader\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Inter\'; font-size:11pt;\">SAD</span></p></body></html>"))
+        self.textBrowser_10.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'Newsreader\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Inter\'; font-size:11pt;\">SURPRISE</span></p></body></html>"))
+        self.textBrowser_11.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'Newsreader\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Inter\'; font-size:11pt;\">NEUTRAL</span></p></body></html>"))
+        self.emotionDetectorButton.setText(_translate("MainWindow", "Emotion Detector"))
+        self.whoWeAreButton.setText(_translate("MainWindow", "Who we are"))
+        self.backButton.setText(_translate("MainWindow", "BACK"))
